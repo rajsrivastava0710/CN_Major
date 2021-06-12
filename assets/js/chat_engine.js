@@ -78,13 +78,14 @@ class chatEngine{
 
         
         self.socket.on('typing_status',function(data){
-            
+            clearInterval(timer_id)
         	$("#chat-list-container .notify .typing").html(`${data.user_name} is typing ..</li>`);
         	$("#chat-list-container .notify").fadeIn(200);
         	timer_id = setTimeout(function(){
-        	$("#chat-list-container .notify").hide();
-        	$("#chat-list-container .notify .typing").html('');
-        	}, 2000);
+        	// $("#chat-list-container .notify").hide();
+            $("#chat-list-container .notify").fadeOut(100);
+        	}, 1500);
+
         })
     }
 

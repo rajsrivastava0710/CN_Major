@@ -20,7 +20,7 @@
                 success: function(data){
                     // console.log(data);
                 	$('#new-post-form textarea').val('');
-                 $('#new-post-form input#post-pic').val('');   
+                    $('#new-post-form input#post-pic').val('');   
                     let newPost = newPostDom(data.data.post);
                     $('#post-container>ul').prepend(newPost);
                     deletePost($(' .delete-post-button', newPost));
